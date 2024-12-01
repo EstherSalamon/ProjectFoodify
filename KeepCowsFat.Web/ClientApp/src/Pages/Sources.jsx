@@ -20,26 +20,12 @@
 
 function Sources() {
 
-    var title = String.raw`
-             ___| |_  ___  _____ __      _  ___  _____ ___
-            / __| __|/ _  |  __/ \ \ /\ / // _  |  __// __|
-            \__ | |_  (_| | |     \ V  V /  (_| | |   \__ |
-            |___/\__|\__,_|_|      \_/\_/  \__,_|_|   |___/
-        `;
-
     return (
         <div style={{ margin: 150 }}>
-            <pre>{title}</pre>
             <h4>Sources</h4>
-            <h>Whatever I based on facts, I tried to list here. Everything else is just about as real as talking donkeys flying over the moon [figure out own reference]</h>
+            <h>Whatever I based on facts, I tried to list here. Everything else is just about as real as kjhgfr being a vocabulary word.</h>
             <br/>
-            <pre>this is text
-                and here
-                ahtnla skdgj            lkfdjs
-                line many
-                many more
-            okay?</pre>
-
+            
             <p>Home:</p>
             <p>There is nothing on this page that has to be sourced</p>
             <p>About:</p>
