@@ -137,13 +137,13 @@ const Plaque = () => {
                             <Alert.Heading>Submission successful</Alert.Heading>
                             <p>
                                 Thank you for your interest in our products. A member of our team will reach out to you shortly. If you have not received a
-                                reply within 6-8 business days, contact us directly at <a href='mailto:esther386386@gmail.com' target='_blank'>esther386386@gmail.com</a>.
+                                reply within 6-8 business days, contact us directly at <a href='mailto:projectfoodify@gmail.com' target='_blank'>projectfoodify@gmail.com</a>.
                             </p>
                         </Alert>
                         <Alert variant="danger" show={showError} style={{ margin: 25 }} onClose={() => setShowError(false)} dismissible style={{ position: '' }}>
                             <Alert.Heading>Oops! You got an error</Alert.Heading>
                             <p>
-                                Try reloading the page and resubmitting the form, or contact us directly at <a href='mailto:esther386386@gmail.com' target='_blank'>esther386386@gmail.com</a>.
+                                Try reloading the page and resubmitting the form, or contact us directly at <a href='mailto:projectfoodify@gmail.com' target='_blank'>projectfoodify@gmail.com</a>.
                             </p>
                         </Alert>
                     </div>

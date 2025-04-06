@@ -25,11 +25,12 @@ function Sources() {
             <h4>Sources</h4>
             <h>Whatever I based on facts, I tried to list here. Everything else is just about as real as kjhgfr being a vocabulary word.</h>
             <br/>
-            
             <p>Home:</p>
-            <p>There is nothing on this page that has to be sourced</p>
+            <p>There is nothing on this page that has sources.</p>
             <p>About:</p>
             <p>The understanding of the plan is based on Let My Nation Descend. Whatever I could confirm on my own, I did. Whatever I could not, I left their sources.</p>
+            <p>Backstory:</p>
+            <p>Needs a better name. This is </p>
         </div>
     )
 };
