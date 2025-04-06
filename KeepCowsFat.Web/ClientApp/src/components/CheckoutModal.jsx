@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import emailjs from '@emailjs/browser';
 
 
-export default CheckoutModal = (cartItem) => {
+export default CheckoutModal = (cartItem, open, handleClose) => {
 
     const [text, setText] = useState('The grain within is consecrated for the purpose of saving the New Egyptian Kingdom'); //happens to be, this shld be sent in, not state here
     const [name, setName] = useState('');
@@ -19,6 +19,11 @@ export default CheckoutModal = (cartItem) => {
         setValidForm(isValid);
 
     }, [text, name, email, payment]);
+
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
 
     const onBuyClick = async () => {
 
@@ -62,7 +67,7 @@ export default CheckoutModal = (cartItem) => {
     }
 
     return (
-        <Modal id='pay' show={showModal} scrollable={true} onHide={onHideClick}>
+        <Modal id='pay' open={open} scrollable={true} handleClose={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Checkout</Modal.Title>
             </Modal.Header>

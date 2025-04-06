@@ -1,7 +1,7 @@
 ﻿import { CgMenuRightAlt } from "react-icons/cg";
 import { CgMenuLeftAlt } from "react-icons/cg";
 
-export default RefSheet = () => {
+export default RefSheet = (open, handleClose) => {
     return (
         <div className={`col-1 ${showRef ? 'ref-show-w fade-in' : 'ref-full'}`}>
             <div style={{ marginTop: 250 }}>
