@@ -1,0 +1,36 @@
+﻿
+.closeBtn {
+    padding-bottom: 0;
+}
+
+.header {
+    border-bottom: 3px solid #cccccc;
+}
+
+.headerText {
+    margin: 0 15px 15px;
+    font-size: 2rem;
+    color: #999999;
+}
+
+.body {
+    padding: 15px 20px;
+    
+}
+
+.item {
+   text-align: left;
+   line-height: 1.25;
+}
+
+.includeFlex {
+    text-align: right;
+}
+
+.price {
+    color:#03ae22;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.25;
+}

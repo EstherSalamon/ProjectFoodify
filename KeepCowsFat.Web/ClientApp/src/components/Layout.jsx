@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
                     </ul>
                 </nav>
             </header>
-            <div style={{marginTop: 225} }>
+            <div style={{marginTop: 225}}>
                 {children}
             </div>
             <footer className="text-center text-lg-start bg-body-tertiary text-muted" style={{marginTop: 50} }>

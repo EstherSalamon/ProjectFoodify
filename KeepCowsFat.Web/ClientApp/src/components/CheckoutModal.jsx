@@ -1,12 +1,13 @@
 ﻿
 
+import { useState, useEffect } from 'react';
 import { PiTrademarkLight } from "react-icons/pi";
 import { convertDecimalToWords } from 'decimal-to-words-by-shubham-setia';
 import Modal from 'react-bootstrap/Modal';
 import emailjs from '@emailjs/browser';
 
 
-export default CheckoutModal = (cartItem, open, handleClose) => {
+export const CheckoutModal = (cartItem, open, handleClose) => {
 
     const [text, setText] = useState('The grain within is consecrated for the purpose of saving the New Egyptian Kingdom'); //happens to be, this shld be sent in, not state here
     const [name, setName] = useState('');
@@ -16,7 +17,7 @@ export default CheckoutModal = (cartItem, open, handleClose) => {
     useEffect(() => {
 
         const isValid = text && name && email;
-        setValidForm(isValid);
+        //setValidForm(isValid);
 
     }, [text, name, email, payment]);
 
@@ -79,9 +80,9 @@ export default CheckoutModal = (cartItem, open, handleClose) => {
                     </div>
                     <div className='rightColumn' style={{ textAlign: 'left' }}>
                         <b>Custom Plaque</b>
-                        <p>Size: {getSize()}</p>
-                        <p style={{ marginTop: -15 }}>Material: {material}</p>
-                        <p style={{ marginTop: -15 }}>Amount: {capitalize(convertDecimalToWords(amount))} ({amount})</p>
+                        <p>Size: 'getsize()'</p>
+                        <p style={{ marginTop: -15 }}>Material: material</p>
+                        <p style={{ marginTop: -15 }}>Amount: </p>
                     </div>
                     <br />
                 </div>
@@ -89,12 +90,12 @@ export default CheckoutModal = (cartItem, open, handleClose) => {
                 <h3 className='mt-2'>Customization</h3>
                 <hr style={{ marginTop: -10, height: 3, background: 'black' }} />
                 <h6>Text: (100 characters limit)</h6>
-                {(showText && !text) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}
+                {/*{(showText && !text) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}*/}
                 <textarea value={text} onChange={e => setText(e.target.value)} maxLength='100' className='form-control' rows='3'></textarea>
-                <div className="form-check" style={{ marginTop: 5 }}>
-                    <input className="form-check-input" type="checkbox" checked={includeRosetta} onChange={e => setIncludeRosetta(e.target.checked)} id="flexCheckDefault" />
-                    <label className="form-check-label" htmlFor="flexCheckDefault">Include a Rosetta Stone<PiTrademarkLight style={{ marginBottom: 10, fontSize: 10 }}></PiTrademarkLight></label>
-                </div>
+                {/*<div className="form-check" style={{ marginTop: 5 }}>*/}
+                {/*    <input className="form-check-input" type="checkbox" checked={includeRosetta} onChange={e => setIncludeRosetta(e.target.checked)} id="flexCheckDefault" />*/}
+                {/*    <label className="form-check-label" htmlFor="flexCheckDefault">Include a Rosetta Stone<PiTrademarkLight style={{ marginBottom: 10, fontSize: 10 }}></PiTrademarkLight></label>*/}
+                {/*</div>*/}
                 <div className='terms'>
                     <i>Rosetta Stone<PiTrademarkLight style={{ marginBottom: 6, fontSize: 6 }}></PiTrademarkLight> is a United Kingdom of Egypt Department of Education attempt
                         at increasing literacy. The feature includes a clear list of the Heiroglyphic alphabet, as translated phonetically into the language the user is most familiar with.
@@ -102,25 +103,25 @@ export default CheckoutModal = (cartItem, open, handleClose) => {
                 </div>
                 <h3 className='mt-2'>Payment</h3>
                 <hr style={{ marginTop: -10, height: 3, background: 'black' }} />
-                <h6>Price: {cheshbonTotal() * amount} Deben</h6>
-                {(showText && !payment) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}
+                <h6>Price:  Deben</h6>
+             {/*   {(showText && !payment) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}*/}
                 <textarea className='form-control' rows='7' value={payment} onChange={e => setPayment(e.target.value)} placeholder='Write a short paragraph (3-4 sentences) containing a combination of items from the reference sheet totaling the price of the purchase'></textarea>
                 <h3 className='mt-2'>Shipping Information</h3>
                 <hr style={{ marginTop: -10, height: 3, background: 'black' }} />
-                {(showText && !name) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}
-                <input type='text' name='name' className='form-control' placeholder='Name' value={name} onChange={e => setName(e.target.value)} />
-                {(showText && !email) ? <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p> : <div style={{ height: 10 }}></div>}
+               {/* {(showText && !name) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}*/}
+               {/* <input type='text' name='name' className='form-control' placeholder='Name' value={name} onChange={e => setName(e.target.value)} />*/}
+               {/* {(showText && !email) ? <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p> : <div style={{ height: 10 }}></div>}*/}
                 <input type='email' name='email' className='form-control' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
                 <div className='terms'>
                     <i>Disclaimer: If you would like to receive requested goods, please fill the form out correctly. The incorrect submission of the form will cause great disruption to our mailing system.</i>
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <button className='btn btn-secondary' onClick={onHideClick}>
+                <button className='btn btn-secondary' >
                     Cancel
                 </button>
                 <button className='btn btn-primary' onClick={onBuyClick}>
-                    {!processing ? 'Complete transaction' : <div className="lds-ring"><div></div><div></div><div></div><div></div></div>}
+                    {true ? 'Complete transaction' : <div className="lds-ring"><div></div><div></div><div></div><div></div></div>}
                 </button>
             </Modal.Footer>
         </Modal>

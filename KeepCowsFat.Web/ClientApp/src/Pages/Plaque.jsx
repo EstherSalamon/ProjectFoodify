@@ -140,7 +140,7 @@ const Plaque = () => {
                                 reply within 6-8 business days, contact us directly at <a href='mailto:projectfoodify@gmail.com' target='_blank'>projectfoodify@gmail.com</a>.
                             </p>
                         </Alert>
-                        <Alert variant="danger" show={showError} style={{ margin: 25 }} onClose={() => setShowError(false)} dismissible style={{ position: '' }}>
+                        <Alert variant="danger" show={showError} style={{ margin: 25 }} onClose={() => setShowError(false)} dismissible>
                             <Alert.Heading>Oops! You got an error</Alert.Heading>
                             <p>
                                 Try reloading the page and resubmitting the form, or contact us directly at <a href='mailto:projectfoodify@gmail.com' target='_blank'>projectfoodify@gmail.com</a>.

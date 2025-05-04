@@ -10,23 +10,34 @@ import Contact from './Pages/Contact';
 import ContextComponent from './TotalContext';
 import Slave from './Pages/Slave';
 import Sources from './Pages/Sources';
+import { plaque } from './Product Classes/Products';
+import { PlaqueClass } from './Product Classes/PlaqueClass';
+import { RefSheetProvider } from './components/RefSheetWrapper';
+import ProductPage from './components/Product';
 const App = () => {
     return (
         <ContextComponent>
             <Layout>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path='/backstory' element={<BackStory />} />
-                    <Route path='/services' element={<Services />} />
-                    <Route path='/PTPF/NMTDPL/952377' element={<Plaque />} />
-                    <Route path='/PTPF/NMTDSL/952724' element={<Slave />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path='/sources' element={<Sources />} />
-                </Routes>
+                <RefSheetProvider>
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/backstory' element={<BackStory />} />
+                        <Route path='/services' element={<Services />} />
+                        <Route path='/PTPF/NMTDPL/952377' element={<Plaque />} />
+                        <Route path='/PTPF/NMTDSL/952724' element={<Slave />} />
+                        <Route path='/contact' element={<Contact />} />
+                        <Route path='/sources' element={<Sources />} />
+
+                        <Route path='/wait' element={<ProductPage product={PlaqueClass} />} />
+
+                    </Routes>
+                </RefSheetProvider>
             </Layout>
         </ContextComponent>
     );
 }
 
 export default App;
+
+//think you cld do a channels concept for all products offered? wld be cool
