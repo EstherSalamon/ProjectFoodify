@@ -1,14 +1,12 @@
-﻿import React, { useState, useContext } from 'react';
+﻿import { useState } from 'react';
 import { CheckoutModal } from './CheckoutModal';
 import { finishedPlaque } from '../Product Classes/PlaqueClass';
-import { RefSheetContext } from './RefSheetWrapper';
+import { RefSheetBtn } from './RefSheet';
 
 import './productPage.css';
 
 
 const ProductPage = (product) => {
-
-    const { setShowRefSheet } = useContext(RefSheetContext);
 
     const [showCheckoutModal, setShowCheckoutModal] = useState(false);
     const [largeImg, setLargeImg] = useState('');
@@ -19,13 +17,14 @@ const ProductPage = (product) => {
     }
 
     return (
-        <div>
+        <>
             <h1>{finishedPlaque.title}</h1>
             <h1>{finishedPlaque.description}</h1>
-            <button className='refSheetBtn' onClick={() => setShowRefSheet(true)}>Reference Sheet</button>
+
+            <RefSheetBtn/>
           
             <CheckoutModal cartItem={product} open={showCheckoutModal} handleClose={() => setShowCheckoutModal(false)} />
-        </div>
+        </>
     )
 };
 

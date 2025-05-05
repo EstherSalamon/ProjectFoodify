@@ -10,7 +10,7 @@
 .headerText {
     margin: 0 15px 15px;
     font-size: 2rem;
-    color: #999999;
+    color: #036d16;
 }
 
 .body {
@@ -34,3 +34,22 @@
     margin: 0;
     line-height: 1.25;
 }
+
+.refSheetBtn {
+    position: fixed;
+    right: -40px;
+    top: 30%;
+    transform: rotate(-90deg);
+    transition: right 0.5s;
+    border-radius: 5px;
+    padding: 5px;
+    padding-bottom: 15px;
+    color: white;
+    background-color: green;
+    border: none;
+    font-size: 12px;
+}
+
+    .refSheetBtn:hover {
+        right: -35px;
+    }
