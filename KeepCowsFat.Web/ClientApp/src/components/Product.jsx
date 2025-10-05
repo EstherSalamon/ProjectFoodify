@@ -2,6 +2,7 @@
 import { CheckoutModal } from './CheckoutModal';
 import { finishedPlaque } from '../Product Classes/PlaqueClass';
 import { RefSheetBtn } from './RefSheet';
+import { plaqueStuff } from '../Product Classes/PlaqueClass';
 
 import './productPage.css';
 
@@ -16,10 +17,17 @@ const ProductPage = (product) => {
         setLargeImg(product.images.find(img => img.sqn === 1));
     }
 
+    const plaque = new plaqueStuff();
+
     return (
         <>
+            <h1>{plaque.material}</h1>
             <h1>{finishedPlaque.title}</h1>
             <h1>{finishedPlaque.description}</h1>
+            <ul>
+                {finishedPlaque.details.map((detail, idx) => <li key={idx }>{detail}</li>) }
+            </ul>
+            <span>{finishedPlaque.getPrice('sdfs', 23)} Deben</span>
 
             <RefSheetBtn/>
           

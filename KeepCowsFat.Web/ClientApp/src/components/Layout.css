@@ -1,171 +1,36 @@
 ﻿
 
-/*-----------this is the just top slanted one, just put in <header></header>-------------*/
-/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
-
-:root {
-    font-size: 10px;
-    --heading-height: 30em;
-}
-
 body {
-    font-family: "Roboto", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #101010;
+    background-color: #8bb08d;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    height: var(--heading-height);
-}
-
-      
-    header::before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 6em;
-        width: 100%;
-        height: calc(var(--heading-height) + 10em);
-        z-index: -1;
-        transform: skewY(-3.5deg);
-        background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('Images/StorehouseBackground.jpg') no-repeat center, linear-gradient(#4e4376, #2b5876);
-        background-size: cover;
-        border-bottom: .2em solid #fff;
-    }
-
-h1 {
-    font-size: calc(2.8em + 2.6vw);
-    font-weight: 700;
-    letter-spacing: .01em;
-    padding: 10rem 0 0 4.5rem;
-    text-shadow: .022em .022em .022em #111;
-    color: #fff;
-}
-
-main {
-    padding: calc(var(--heading-height) + 1.5vw) 4em 0;
-}
-
-p {
-    font-size: calc(2em + .25vw);
-    font-weight: 400;
-    line-height: 2;
-    margin-bottom: 1.5em;
-    color: #fcfcfc;
-}*/
-
-/*------this is the typical one---------*/
-    header img {
-    height: 120px;
-    margin-left: 40px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-body {
-    font-family: sans-serif;
-}
-
-header {
+.header {
     background-color: #8bb08d;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    height: 150px;
     display: flex;
     align-items: center;
-    /*box-shadow: 0 0 25px 0 black;*/
-    height: 150px;
+    gap: 30px;
 }
 
-header * {
-    display: inline;
+.logo {
+    height: 120px;
+    margin-left: 40px;
 }
 
-header li {
-    margin: 20px;
-}
+.navLinks {
+    display: flex;
+    gap: 30px;
 
-header li a {
-    color: black;
-    font-size: 18px;
-    text-decoration: none;
-}
-@media all and (max-width: 400px) {
-    .container > li {
-        flex-basis: 100%;
-    }
-
-    .search {
-        order: 1;
+    a {
+        color: black;
+        font-size: 18px;
+        text-decoration: none;
     }
 }
 
-
-/*
-    -----------this is the slanted top/bottom/pic one---------------
-
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
+.childrenWrapper {
+    margin-top: 150px;
 }
-
-
-p {
-    font-family: 'Open Sans', sans-serif;
-    text-align: justify;
-}
-
-
-.blue-bg {
-    position: fixed;
-    background: url('Images/StorehouseBackground.jpg');
-    background-size: cover;
-    background-color: #58aff6;
-    top: 0;
-    height: 400px;
-    width: 100vw;
-    z-index: -1;
-    overflow-x: hidden;
-}
-
-
-.white-bg {
-    position: absolute;
-    top: 0;
-    background-color: #fff;
-    min-height: 2500px;
-    margin: 210px 0px;
-    width: 100vw;
-    height: 100vh;
-    transform: skewY(5deg);
-    z-index: -1;
-}
-
-
-.content {
-    position: absolute;
-    top: 0;
-    margin: 250px 10vw;
-    max-width: 60vw;
-    background-color: transparent;
-}
-
-.shadow {
-    box-shadow: -2px -5px 5px 0px rgba(0,0,0,0.3);
-}*/
-
-/*-- Notes:
-
-Header IMG:   Change image by swapping out url in .blue-bg
-              Make solid color by removing 'background' properties
-Slant angle:  Modify skewY degree in .white-bg
-Top distance: Slant distance from top = margin in .white-bg
-              Text distance from top = margin in .content
-Fixed Header: 'turn off' with "position: absolute" in .blue-bg
-
---*/
