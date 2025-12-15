@@ -1,6 +1,21 @@
 
-.heroImage {
-    background-image: URL("/Images/poster.jpg" );
-    background-position: center;
-    height: 500px;
+.wrapper {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.heroWrapper {
+    background-color: #000;
+    height: 750px;
+    width: 100%;
+}
+
+.heroText {
+    color: #fff;
+    font-size: 80px;
+
+    b {
+        font-weight: 800;
+    }
 }

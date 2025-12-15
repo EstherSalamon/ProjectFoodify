@@ -4,9 +4,11 @@ import './Home.css';
 const Home = () => {
     
     return (
-        <div>
-            <div className="heroImage" />
-            <h1>I want you</h1>
+        <div className='heroWrapper'>
+            <div className='wrapper'>
+                <img src="/Images/pharaohCropped.png" />
+                <h1 className='heroText'>I want <b>YOU</b></h1>
+            </div>
         </div>
     );
 };
