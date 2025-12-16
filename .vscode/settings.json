@@ -2,5 +2,7 @@
     "editor.formatOnSave": true,
     "notebook.formatOnSave.enabled": true,
     "files.autoSaveWhenNoErrors": true,
-    "files.autoSaveWorkspaceFilesOnly": true
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "vs-code-prettier-eslint.prettierLast": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
 }

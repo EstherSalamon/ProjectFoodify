@@ -10,7 +10,6 @@ import Contact from './Pages/Contact';
 import ContextComponent from './TotalContext';
 import Slave from './Pages/Slave';
 import Sources from './Pages/Sources';
-import { plaque } from './Product Classes/Products';
 import { PlaqueClass } from './Product Classes/PlaqueClass';
 import { RefSheetProvider } from './components/RefSheetWrapper';
 import ProductPage from './components/Product';
@@ -39,5 +38,3 @@ const App = () => {
 }
 
 export default App;
-
-//think you cld do a channels concept for all products offered? wld be cool

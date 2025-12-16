@@ -1,0 +1,11 @@
+@import "main";
+
+.container {
+    margin: 150;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.bodyText {
+    font-size: rem-calc(16);
+}
