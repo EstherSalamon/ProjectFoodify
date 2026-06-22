@@ -32,18 +32,16 @@ jobs:
       - name: Ensure .nojekyll and 404 fallback
         run: |
           DIST=KeepCowsFat.Web/ClientApp/dist
-          # ensure dist exists (fail early if not)
           if [ ! -d "$DIST" ]; then
             echo "Build output not found at $DIST" >&2
             ls -la KeepCowsFat.Web/ClientApp || true
             exit 1
           fi
           touch "$DIST/.nojekyll"
-          # create a fallback so SPA routes work
           cp "$DIST/index.html" "$DIST/404.html" || true
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: KeepCowsFat.Web/ClientApp/dist
 
