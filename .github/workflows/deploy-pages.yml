@@ -15,9 +15,18 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    # explicit job-level permissions to ensure GITHUB_TOKEN can push
+    permissions:
+      contents: write
+      pages: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # ensure the runner keeps credentials so further git pushes can authenticate
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -47,6 +56,7 @@ jobs:
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # use the workflow token (GITHUB_TOKEN) — job-level permissions above must allow write
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: KeepCowsFat.Web/ClientApp/dist
           publish_branch: gh-pages
