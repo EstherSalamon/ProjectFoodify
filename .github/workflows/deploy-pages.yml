@@ -6,12 +6,14 @@ on:
       - master
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
 
     steps:
       - name: Checkout repository
@@ -30,7 +32,7 @@ jobs:
         run: npm run build
         working-directory: KeepCowsFat.Web/ClientApp
 
-      - name: Prepare artifact (nojekyll, 404, CNAME)
+      - name: Prepare dist (CNAME / .nojekyll / 404)
         run: |
           DIST=KeepCowsFat.Web/ClientApp/dist
           if [ ! -d "$DIST" ]; then
@@ -42,12 +44,11 @@ jobs:
           cp "$DIST/index.html" "$DIST/404.html" || true
           echo "www.projectfoodify.gov" > "$DIST/CNAME"
 
-      - name: Deploy to gh-pages (push folder)
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: KeepCowsFat.Web/ClientApp/dist
           publish_branch: gh-pages
-          # optional identity:
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
