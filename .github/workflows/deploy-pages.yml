@@ -24,10 +24,12 @@ jobs:
           node-version: '18'
 
       - name: Install ClientApp dependencies
-        run: npm ci --prefix KeepCowsFat.Web/ClientApp
+        run: npm ci
+        working-directory: KeepCowsFat.Web/ClientApp
 
       - name: Build ClientApp
-        run: npm run build --prefix KeepCowsFat.Web/ClientApp
+        run: npm run build
+        working-directory: KeepCowsFat.Web/ClientApp
 
       - name: Ensure .nojekyll, 404 fallback, and add CNAME
         run: |
