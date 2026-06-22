@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pages: write
       id-token: write
 
     steps:
@@ -31,7 +30,7 @@ jobs:
         run: npm run build
         working-directory: KeepCowsFat.Web/ClientApp
 
-      - name: Ensure .nojekyll, 404 fallback, and add CNAME
+      - name: Prepare artifact (nojekyll, 404, CNAME)
         run: |
           DIST=KeepCowsFat.Web/ClientApp/dist
           if [ ! -d "$DIST" ]; then
@@ -39,16 +38,16 @@ jobs:
             ls -la KeepCowsFat.Web/ClientApp || true
             exit 1
           fi
-          # prevent Jekyll processing and add SPA fallback
           touch "$DIST/.nojekyll"
           cp "$DIST/index.html" "$DIST/404.html" || true
-          # add your custom domain CNAME so Pages will use it
           echo "www.projectfoodify.gov" > "$DIST/CNAME"
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to gh-pages (push folder)
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: KeepCowsFat.Web/ClientApp/dist
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: KeepCowsFat.Web/ClientApp/dist
+          publish_branch: gh-pages
+          # optional identity:
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
