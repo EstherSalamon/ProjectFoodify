@@ -29,7 +29,7 @@ jobs:
       - name: Build ClientApp
         run: npm run build --prefix KeepCowsFat.Web/ClientApp
 
-      - name: Ensure .nojekyll and 404 fallback
+      - name: Ensure .nojekyll, 404 fallback, and add CNAME
         run: |
           DIST=KeepCowsFat.Web/ClientApp/dist
           if [ ! -d "$DIST" ]; then
@@ -37,8 +37,11 @@ jobs:
             ls -la KeepCowsFat.Web/ClientApp || true
             exit 1
           fi
+          # prevent Jekyll processing and add SPA fallback
           touch "$DIST/.nojekyll"
           cp "$DIST/index.html" "$DIST/404.html" || true
+          # add your custom domain CNAME so Pages will use it
+          echo "www.projectfoodify.gov" > "$DIST/CNAME"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
