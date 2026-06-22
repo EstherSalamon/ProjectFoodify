@@ -1,0 +1,51 @@
+name: Build and Deploy ClientApp to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install ClientApp dependencies
+        run: npm ci --prefix KeepCowsFat.Web/ClientApp
+
+      - name: Build ClientApp
+        run: npm run build --prefix KeepCowsFat.Web/ClientApp
+
+      - name: Ensure .nojekyll and 404 fallback
+        run: |
+          DIST=KeepCowsFat.Web/ClientApp/dist
+          # ensure dist exists (fail early if not)
+          if [ ! -d "$DIST" ]; then
+            echo "Build output not found at $DIST" >&2
+            ls -la KeepCowsFat.Web/ClientApp || true
+            exit 1
+          fi
+          touch "$DIST/.nojekyll"
+          # create a fallback so SPA routes work
+          cp "$DIST/index.html" "$DIST/404.html" || true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: KeepCowsFat.Web/ClientApp/dist
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
