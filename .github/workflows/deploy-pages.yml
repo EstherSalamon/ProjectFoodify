@@ -32,7 +32,7 @@ jobs:
         run: npm run build
         working-directory: KeepCowsFat.Web/ClientApp
 
-      - name: Prepare dist (CNAME / .nojekyll / 404)
+      - name: Prepare dist (.nojekyll / 404)
         run: |
           DIST=KeepCowsFat.Web/ClientApp/dist
           if [ ! -d "$DIST" ]; then
@@ -42,7 +42,6 @@ jobs:
           fi
           touch "$DIST/.nojekyll"
           cp "$DIST/index.html" "$DIST/404.html" || true
-          echo "www.projectfoodify.gov" > "$DIST/CNAME"
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
