@@ -4,7 +4,7 @@ import { getNameByRegion } from "../utils";
 
 export const RegionSearchComponent: FunctionComponent = () => {
 
-    const imagePath = "/Images/Regions/";
+    const imagePath = "Images/Regions/";
     const mapsLink = "'https://www.google.com/maps/dir//";
     const defaultImage = `${imagePath}Map.png`;
     const defaultLocation = `${mapsLink}egypt`;

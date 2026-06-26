@@ -278,10 +278,10 @@ const Services = () => {
                     <div className='rightColumn'>
                         <img
                             className='this isnt working, i wanna have the pic as an href to blank like by plaque'
-                            src={`/Images/${image}`}
-                            alt={'/Images/Map.jpg'}
+                            src={`Images/${image}`}
+                            alt={'Images/Map.jpg'}
                             onError={event => {
-                                event.target.src = "/Images/Map.png"
+                                event.target.src = "Images/Map.png"
                                 event.onerror = null
                             }}
                             width='400' />
@@ -326,7 +326,7 @@ const Services = () => {
                         <a href='/plq-530918' className='m-li'>
                             <div className='card h-100'>
                                 <div className='card-body' style={{ justifyItems: 'center' }}>
-                                    <img src='/Images/Products/P1.png' style={{ height: 250 }} />
+                                    <img src='Images/Products/P1.png' style={{ height: 250 }} />
                                     <hr />
                                     <p>Customizable Brightly Painted Colored Dyes Plaque Large Heiroglyphic Letters Custom Text Grain Storehouse Surplus col-3' style is margin 15 and width 400</p>
                                 </div>
@@ -337,7 +337,7 @@ const Services = () => {
                         <div className='col'>
                             <div className='card h-100'>
                                 <div className='card-body' style={{ justifyItems: 'center' }}>
-                                    <img src='/Images/Products/sack.png' style={{ height: 250 }} />
+                                    <img src='Images/Products/sack.png' style={{ height: 250 }} />
                                     <hr />
                                     <p>Strong Durable Sacks made of Fiber of Whatever By This and THat place THats the Best for COllecting and Storing Grain for Long PEriods of Time Reusable Woven</p>
                                 </div>
@@ -348,7 +348,7 @@ const Services = () => {
                         <div className='col'>
                             <div className='card h-100'>
                                 <div className='card-body' style={{ justifyItems: 'center' }}>
-                                    <img src='/Images/Products/P1.png' style={{ height: 250 }} />
+                                    <img src='Images/Products/P1.png' style={{ height: 250 }} />
                                     <hr />
                                     <p>Customizable Brightly Painted Colored Dyes Plaque Large Heiroglyphic Letters Custom Text Grain Storehouse Surplus</p>
                                 </div>
@@ -359,7 +359,7 @@ const Services = () => {
                         <div className='col'>
                             <div className='card h-100'>
                                 <div className='card-body' style={{ justifyItems: 'center' }}>
-                                    <img src='/Images/Products/slave.png' style={{ height: 250 }} />
+                                    <img src='Images/Products/slave.png' style={{ height: 250 }} />
                                     <hr />
                                     <p>Government Trained UEDSM Certified Strong Muscular Bony Slave Tall Powerful Worker</p>
                                 </div>

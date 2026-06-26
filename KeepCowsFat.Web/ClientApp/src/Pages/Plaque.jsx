@@ -151,14 +151,14 @@ const Plaque = () => {
                         <div className='leftColumn' style={{ marginTop: 20 }}>
                             <div className='leftColumn' style={{ width: 50, marginLeft: 70 }}>
                                 <div>
-                                    <img src='/Images/Products/P1.png' className={`select-img ${image === 'P1.png' ? 'active-thumb' : ''}`} width='50' onClick={_ => setImage('P1.png')} />
-                                    <img src='/Images/Products/P2.png' className={`select-img ${image === 'P2.png' ? 'active-thumb' : ''}`} width='50' onClick={_ => setImage('P2.png')} />
-                             
+                                    <img src='Images/Products/P1.png' className={`select-img ${image === 'P1.png' ? 'active-thumb' : ''}`} width='50' onClick={_ => setImage('P1.png')} />
+                                    <img src='Images/Products/P2.png' className={`select-img ${image === 'P2.png' ? 'active-thumb' : ''}`} width='50' onClick={_ => setImage('P2.png')} />
+
                                 </div>
                             </div>
                             <div className='rightColumn' style={{ marginLeft: 170 }}>
-                                <a href={`/Images/Products/${image}`} target='_blank'>
-                                    <img src={`/Images/Products/${image}`} height='350' className='big-img' />
+                                <a href={`Images/Products/${image}`} target='_blank'>
+                                    <img src={`Images/Products/${image}`} height='350' className='big-img' />
                                 </a>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ const Plaque = () => {
                                 <input type='number' name='amount' id='amount' value={amount} max='8' min='1' onChange={e => setAmount(e.target.value)} className='form-control' style={{ width: 75 }} />
                             </div>
                             <div className="radio-inputs" style={{ marginTop: 10 }} onChange={e => setSize(e.target.value)}>
-                                <label style={{ marginLeft: 0 }} className={`${size === 's' ? 'active-radio' : ''}` }>
+                                <label style={{ marginLeft: 0 }} className={`${size === 's' ? 'active-radio' : ''}`}>
                                     <input className="radio-input" value='s' type="radio" name="size" />
                                     <span className="radio-tile">
                                         <span className="radio-label">9 x 11</span>
@@ -223,7 +223,7 @@ const Plaque = () => {
                             <div>
                                 <br />
                                 <div className='leftColumn'>
-                                    <img src='/Images/Products/P1.png' width='100' style={{ alignItems: 'center' }} />
+                                    <img src='Images/Products/P1.png' width='100' style={{ alignItems: 'center' }} />
                                 </div>
                                 <div className='rightColumn' style={{ textAlign: 'left' }}>
                                     <b>Custom Plaque</b>
@@ -239,13 +239,13 @@ const Plaque = () => {
                             <h6>Text: (100 characters limit)</h6>
                             {(showText && !text) && <p className='text-danger' style={{ marginBottom: 0 }}>*Please fill out all required fields.</p>}
                             <textarea value={text} onChange={e => setText(e.target.value)} maxLength='100' className='form-control' rows='3'></textarea>
-                            <div className="form-check" style={{marginTop: 5} }>
+                            <div className="form-check" style={{ marginTop: 5 }}>
                                 <input className="form-check-input" type="checkbox" checked={includeRosetta} onChange={e => setIncludeRosetta(e.target.checked)} id="flexCheckDefault" />
-                                <label className="form-check-label" htmlFor="flexCheckDefault">Include a Rosetta Stone<PiTrademarkLight style={{marginBottom: 10, fontSize: 10} }></PiTrademarkLight></label>
+                                <label className="form-check-label" htmlFor="flexCheckDefault">Include a Rosetta Stone<PiTrademarkLight style={{ marginBottom: 10, fontSize: 10 }}></PiTrademarkLight></label>
                             </div>
                             <div className='terms'>
-                            <i>Rosetta Stone<PiTrademarkLight style={{ marginBottom: 6, fontSize: 6 }}></PiTrademarkLight> is a United Kingdom of Egypt Department of Education attempt
-                                at increasing literacy. The feature includes a clear list of the Heiroglyphic alphabet, as translated phonetically into the language the user is most familiar with.
+                                <i>Rosetta Stone<PiTrademarkLight style={{ marginBottom: 6, fontSize: 6 }}></PiTrademarkLight> is a United Kingdom of Egypt Department of Education attempt
+                                    at increasing literacy. The feature includes a clear list of the Heiroglyphic alphabet, as translated phonetically into the language the user is most familiar with.
                                     The Rosetta Stone<PiTrademarkLight style={{ marginBottom: 6, fontSize: 6 }}></PiTrademarkLight> is a universal feature, and can be used for any piece of literature.</i>
                             </div>
                             <h3 className='mt-2'>Payment</h3>
@@ -317,4 +317,4 @@ const Plaque = () => {
 
 export default Plaque;
 
-                            /*the button size complete transaction wrong size on processing*/
+/*the button size complete transaction wrong size on processing*/

@@ -44,7 +44,7 @@
 }
 
 .image {
-    background-image: url( "/Images/StorehouseBackground.jpg" );
+    background-image: url( "Images/StorehouseBackground.jpg" );
     background-size: revert-layer;
     /*height: 200vh;*/
     margin-top: -70px;
